@@ -29,7 +29,7 @@ public class Game {
     }
 
     public GamePlayer nextPlayer() {
-        return currentPlayer == GamePlayer.PlayerOne ? GamePlayer.PlayerTwo : GamePlayer.PlayerOne;
+        return currentPlayer == GamePlayer.PLAYER_ONE ? GamePlayer.PLAYER_TWO : GamePlayer.PLAYER_ONE;
     }
 
     public void setCurrentPlayer(GamePlayer gamePlayer) {
@@ -48,10 +48,10 @@ public class Game {
                 .allMatch((stones) -> stones == 0);
 
         if (playerOnePitsEmpty || playerTwoPitsEmpty) {
-            return GameState.GameOver;
+            return GameState.GAME_OVER;
         }
 
-        return GameState.Active;
+        return GameState.ACTIVE;
     }
 
     public List<Integer> getPits() {
@@ -106,7 +106,6 @@ public class Game {
         if (pitIndex >= pits.size()) throw new NoSuchElementException();
 
         return pitIndex + 1 == pits.size() / 2 || pitIndex + 1 == pits.size();
-
     }
 }
 

@@ -19,12 +19,38 @@ class GameTest {
     }
 
     @Test
-    void moveStones() {
+    void shouldMoveStones() {
     }
 
     @Test
     void shouldCaptureStones() {
+        var lastPlacedPitIndex = 1;
+        var oppositePitIndex = 11;
+        var game = new Game(7, 6);
+        // This pit will act as the one a stone was place in
+        game.getPits().set(lastPlacedPitIndex, 1);
 
+
+        game.captureStones(lastPlacedPitIndex);
+
+        // Assert stones were captured
+        assertEquals(0, (int)game.getPits().get(lastPlacedPitIndex));
+        assertEquals(0, (int)game.getPits().get(oppositePitIndex));
+        assertEquals(7, (int)game.getPits().get(6));
+
+        // Assert all other pits are the same
+        assertEquals(6, (int)game.getPits().get(0));
+        assertEquals(6, (int)game.getPits().get(2));
+        assertEquals(6, (int)game.getPits().get(3));
+        assertEquals(6, (int)game.getPits().get(4));
+        assertEquals(6, (int)game.getPits().get(5));
+        
+        assertEquals(6, (int)game.getPits().get(7));
+        assertEquals(6, (int)game.getPits().get(8));
+        assertEquals(6, (int)game.getPits().get(9));
+        assertEquals(6, (int)game.getPits().get(10));
+        assertEquals(6, (int)game.getPits().get(12));
+        assertEquals(0, (int)game.getPits().get(13));
     }
 
     @Test
@@ -65,12 +91,12 @@ class GameTest {
     void shouldBeGameOverWhenPitsEmpty() {
         var game = new Game(7, 6);
 
-        assertSame(game.getGameState(), GameState.Active);
+        assertSame(game.getGameState(), GameState.ACTIVE);
 
         for (var i = 0; i < 7; i++) {
             game.getPits().set(i, 0);
         }
 
-        assertSame(game.getGameState(), GameState.GameOver);
+        assertSame(game.getGameState(), GameState.GAME_OVER);
     }
 }

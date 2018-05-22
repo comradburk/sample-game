@@ -8,6 +8,7 @@ import app.game.repositories.IGameRepository;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.naming.OperationNotSupportedException;
+import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -27,7 +28,7 @@ public class GameService implements IGameService {
         var game = new Game(BOARD_SIZE, STARTING_STONE_COUNT);
 
         game.setId(UUID.randomUUID());
-        game.setCurrentPlayer(GamePlayer.PlayerOne);
+        game.setCurrentPlayer(GamePlayer.PLAYER_ONE);
 
         return gameRepository.saveGame(game);
     }
@@ -43,10 +44,15 @@ public class GameService implements IGameService {
     }
 
     @Override
+    public Collection<Game> getGames() {
+        return gameRepository.getGames();
+    }
+
+    @Override
     public Game performMove(UUID gameId, GamePlayer player, int playerPitIndex) throws OperationNotSupportedException {
         var game = gameRepository.getGameById(gameId).get();
 
-        if (game.getGameState() != GameState.Active) {
+        if (game.getGameState() != GameState.ACTIVE) {
             throw new OperationNotSupportedException("Game is over");
         }
 
@@ -54,7 +60,7 @@ public class GameService implements IGameService {
             throw new OperationNotSupportedException("It is not the players turn");
         }
 
-        var pitIndex = (game.getCurrentPlayer() == GamePlayer.PlayerTwo) ?
+        var pitIndex = (game.getCurrentPlayer() == GamePlayer.PLAYER_TWO) ?
                 playerPitIndex + (game.getPits().size() + 1) : playerPitIndex;
 
         if (game.getPits().get(pitIndex) == 0) {

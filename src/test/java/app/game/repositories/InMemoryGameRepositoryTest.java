@@ -1,18 +1,25 @@
 package app.game.repositories;
 
 import app.game.models.Game;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class InMemoryGameRepositoryTest {
+    private InMemoryGameRepository repository;
+
+    @BeforeEach
+    void setup(){
+        repository = new InMemoryGameRepository();
+    }
+
     @Test
     void shouldSaveGame() {
-        var repository = new InMemoryGameRepository();
-
         var game = new Game(7, 6);
         var savedGame = repository.saveGame(game);
 
@@ -21,8 +28,6 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldGetGameById() {
-        var repository = new InMemoryGameRepository();
-
         var game = new Game(7, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
@@ -35,9 +40,24 @@ class InMemoryGameRepositoryTest {
     }
 
     @Test
-    void shouldGetEmptyGameIfNotExists(){
-        var repository = new InMemoryGameRepository();
+    void shouldGetAllGames() {
+        Stream.generate(() -> {
+            var newGame = new Game(7, 6);
+            newGame.setId(UUID.randomUUID());
+            return newGame;
+        })
+                .limit(4)
+                .forEach(repository::saveGame);
 
+
+        var retrievedGames = repository.getGames();
+
+
+        assertEquals(4, retrievedGames.size());
+    }
+
+    @Test
+    void shouldGetEmptyGameIfNotExists(){
         var game = new Game(7, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
@@ -50,8 +70,6 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldDeleteGame() {
-        var repository = new InMemoryGameRepository();
-
         var game = new Game(7, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
@@ -65,8 +83,6 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldThrowWhenDeletingNonExisting() {
-        var repository = new InMemoryGameRepository();
-
         var game = new Game(7, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);

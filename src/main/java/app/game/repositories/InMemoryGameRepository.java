@@ -14,19 +14,24 @@ public class InMemoryGameRepository implements IGameRepository {
     }
 
     @Override
-    public Game saveGame(Game game) {
-        games.put(game.getId(), game);
-
-        return game;
-    }
-
-    @Override
     public Optional<Game> getGameById(UUID id) {
         if (!games.containsKey(id)) {
             return Optional.empty();
         }
 
         return Optional.of(games.get(id));
+    }
+
+    @Override
+    public Collection<Game> getGames() {
+        return games.values();
+    }
+
+    @Override
+    public Game saveGame(Game game) {
+        games.put(game.getId(), game);
+
+        return game;
     }
 
     @Override

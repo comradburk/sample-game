@@ -5,18 +5,19 @@ import com.google.inject.Inject;
 import io.javalin.Javalin;
 
 import javax.inject.Singleton;
+import javax.naming.OperationNotSupportedException;
 import java.util.Collections;
 import java.util.Set;
 
 @Singleton
-class WebEntrypoint implements AppEntrypoint {
+class WebEntryPoint implements AppEntryPoint {
     private Javalin app;
 
     @Inject(optional = true)
     private Set<Routing> routes = Collections.emptySet();
 
     @Inject
-    public WebEntrypoint(Javalin app) {
+    public WebEntryPoint(Javalin app) {
         this.app = app;
     }
 
@@ -26,6 +27,10 @@ class WebEntrypoint implements AppEntrypoint {
         app.port(7000);
         app.exception(Exception.class, (ex, context) -> {
             context.status(500);
+            context.json(ex.getMessage());
+        });
+        app.exception(OperationNotSupportedException.class, (ex, context) -> {
+            context.status(400);
             context.json(ex.getMessage());
         });
         app.start();

@@ -19,9 +19,17 @@ public class GameRouting extends Routing<GameController> {
     @Override
     public void bindRoutes() {
         javalin.routes(() -> {
-            path("/game", () -> post(ctx -> getController().createGame(ctx)));
-            path("/game/" + GameController.ROUTE_PARAM_GAME_ID, () -> get(ctx -> getController().getGame(ctx)));
-            path("/game/" + GameController.ROUTE_PARAM_GAME_ID, () -> delete(ctx -> getController().cancelGame(ctx)));
+            path("game", () -> {
+                get(ctx -> getController().getGames(ctx));
+                post(ctx -> getController().createGame(ctx));
+
+                path(GameController.ROUTE_PARAM_GAME_ID, () -> {
+                    get(ctx -> getController().getGame(ctx));
+                    delete(ctx -> getController().cancelGame(ctx));
+
+                    path("move", () -> post(ctx -> getController().performMove(ctx)));
+                });
+            });
         });
     }
 }

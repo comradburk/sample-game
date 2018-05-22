@@ -20,7 +20,7 @@ public class WebModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(Javalin.class).toInstance(app);
-        bind(AppEntrypoint.class).to(WebEntrypoint.class);
+        bind(AppEntryPoint.class).to(WebEntryPoint.class);
 
         install(new GameModule());
     }
