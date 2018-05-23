@@ -1,0 +1,43 @@
+<div layout-gt-sm="row" layout="column" class="game-list-module">
+<div flex-gt-sm="50" flex>
+    <md-toolbar layout="row" class="md-hue-1 ">
+        <div class="md-toolbar-tools">
+        <span>Active Games</span>
+        </div>
+    </md-toolbar>
+    
+    <md-content>
+        <md-list class="md-dense" flex>
+            <md-list-item class="md-3-line" ng-repeat="game in $ctrl.games">
+                <md-icon class="fa fa-2x fa-gamepad"></md-icon>
+                <div class="md-list-item-text" layout="column">
+                    <h3>Player One Score: {{game.playerOneScore}}</h3>
+                    <h4>Player Two Score: {{game.playerTwoScore}}</h4>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
+
+<md-divider></md-divider>
+
+<div flex-gt-sm="50" flex>
+    <md-toolbar layout="row" class="md-hue-1">
+        <div class="md-toolbar-tools">
+        <span>Completed Games</span>
+        </div>
+    </md-toolbar>
+    
+    <md-content>
+        <md-list class="md-dense" flex>
+            <md-list-item class="md-3-line" ng-repeat="game in $ctrl.games">
+                <md-icon class="fa fa-2x fa-gamepad"></md-icon>
+                <div class="md-list-item-text" layout="column">
+                    <h3>Player One Score: {{game.playerOneScore}}</h3>
+                    <h4>Player Two Score: {{game.playerTwoScore}}</h4>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
+</div>

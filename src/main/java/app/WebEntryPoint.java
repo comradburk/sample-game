@@ -25,6 +25,7 @@ class WebEntryPoint implements AppEntryPoint {
     public void boot(String[] args) {
         bindRoutes();
         app.port(7000);
+        app.enableCorsForOrigin("http://localhost:8080");
         app.exception(Exception.class, (ex, context) -> {
             context.status(500);
             context.json(ex.getMessage());
