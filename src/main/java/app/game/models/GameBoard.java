@@ -48,15 +48,21 @@ public class GameBoard {
             currentPit = currentPit.getNextPit();
         }
 
-        var lastPit = currentPit.playPit();
+        var lastPit = currentPit.playPit(player);
 
-        if (lastPit.getStoneCount() == 1) {
+        if (lastPit instanceof PlayerPit && lastPit.getStoneCount() == 1 && lastPit.getPitOwner() == player) {
             captureStones(player, lastPit);
         }
-
-        if (!(lastPit instanceof ScorePit)) {
-            _currentPlayer = GameUtilities.GetNextPlayer(_currentPlayer);
-        }
+		
+		if (!(lastPit instanceof ScorePit && lastPit.getPitOwner() == player)) {
+			_currentPlayer = GameUtilities.GetNextPlayer(_currentPlayer);
+		}
+		
+		if (getGameState() == GameState.GAME_OVER) {
+			for (var player in _playerPits.getKeys()) {
+				clearPlayerSide(player);
+			}
+		}
     }
 
     void captureStones(GamePlayer player, StonePit lastScoredPit) throws OperationNotSupportedException {
@@ -91,6 +97,21 @@ public class GameBoard {
 
         return currentPit.getStoneCount();
     }
+	
+	public void clearPlayerSide(GamePlayer player) {
+		var pitsToClear = _playerPitCount;
+		
+		var currentClearedStones = 0;
+		var currentPit = playerPits.get(player);
+		
+		for (var i = 0; i < _playerPitCount; i++) {
+			currentClearedStones += currentPit.getStoneCount();
+			currentPit.setStoneCount(0);
+			currentPit = currentPit.getNextPit();
+		}
+		
+		currentPit.setStoneCount(currentPit.getStoneCount() + currentClearedStones);
+	}
 
     public GameState getGameState() {
         var anyPitsEmpty = _playerPits.values().stream()

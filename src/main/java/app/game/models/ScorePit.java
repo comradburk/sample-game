@@ -2,9 +2,9 @@ package app.game.models;
 
 import javax.naming.OperationNotSupportedException;
 
-public class ScorePit extends StonePit {
-    public ScorePit() {
-        super(0, null);
+public class ScorePit extends StonePit {	
+    public ScorePit(GamePlayer pitOwner) {
+		super(0, null, pitOwner);
     }
 
     public void SetNextPit(StonePit firstPitNextPlayer) {
@@ -13,6 +13,14 @@ public class ScorePit extends StonePit {
 
     public void AddCapturedStones(int stones) {
         this.stones = this.stones + stones;
+    }
+	
+	public StonePit distributeStones(int stones, GamePlayer player) {
+        if (player == _pitOwner) {
+			return super.distributeStones(stones, player);
+		}
+		
+		return nextPit.distributeStones(stones, player);
     }
 
     public int captureStones() throws OperationNotSupportedException {

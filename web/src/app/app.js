@@ -1,5 +1,6 @@
 import angular from 'angular';
 import { DependenciesModule } from './dependencies/dependencies.module';
+import { ConfigModule } from './config/config.module';
 import { GameModule } from './game/game.module';
 
 import '../style/app.css';
@@ -17,13 +18,16 @@ let app = () => {
 
 class AppCtrl {
   constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
   }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [DependenciesModule, GameModule])
+angular.module(MODULE_NAME, [
+    DependenciesModule,
+    ConfigModule,
+    GameModule
+  ])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 

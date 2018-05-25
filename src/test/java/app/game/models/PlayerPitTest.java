@@ -35,4 +35,16 @@ class PlayerPitTest {
         playerSidePit = playerSidePit.getNextPit();
         assertEquals(0, playerSidePit.getStoneCount());
     }
+	
+	@Test
+    void shouldDistributeStoneIntoPit() {
+        var playerSidePit = new PlayerPit(0, new PlayerPit(0, null, GamePlayer.PLAYER_ONE), GamePlayer.PLAYER_ONE);
+
+
+        playerSidePit.distributeStones(2);
+
+
+        assertEquals(1, playerSidePit.getStoneCount());
+        assertEquals(1, playerSidePit.getNextPit().getStoneCount());
+    }
 }

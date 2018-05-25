@@ -34,24 +34,6 @@ footer {
   margin-left: auto;
 }
 
-.score-pit {
-  background-color: lightgray;
-  text-align: center;
-  height: 200px;
-  padding: 10px;
-}
-
-.player-pit {
-  background-color: lightgray;
-  text-align: center;
-  cursor: pointer;
-}
-
-.player-pits {
-  align-items: stretch;
-  display: flex;
-}
-
 @media (min-width: 768px) {
   .container {
     width: 750px;

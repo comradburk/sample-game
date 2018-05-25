@@ -3,36 +3,28 @@ import template from './game-board.html';
 export const GameBoardComponent = {
   template: template,
   controller: class GameBoardController {
-    constructor(GameBoardService) {
+    constructor(GameService) {
       'ngInject';
-      this.gameBoardService = GameBoardService;
+      this.gameService = GameService;
     }
 
     $onInit() {
-      this.game = {
-        "playerOnePlayerPits": [
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-        ],
-        "playerOneScorePit": {
-          value: 0
-        },
-        "playerTwoPlayerPits": [
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-          { value: 6 },
-        ],
-        "playerTwoScorePit": {
-          value: 0
-        }
-      };
+      this.game = null;
+      this.loading = false;
+      this.gamePlayers = {
+        playerOne: 'playerOne',
+        playerTwo: 'playerTwo'
+      }
+
+      newGame();
+    }
+
+    newGame() {
+      this.loading = true;
+      this.gameService.newGame()
+        .then(gameId => this.gameService.getGame(gameId))
+        .then(game => this.game = game)
+        .finally(x => this.loading = false);
     }
   }
 };

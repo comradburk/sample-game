@@ -10,8 +10,8 @@ import java.util.stream.Stream;
 public class StonePitFactory {
     public Map<GamePlayer, StonePit> buildPlayerPits(int playerPitCount, int startingStones) {
         StonePit[] playerPits = {
-                buildPlayerSide(playerPitCount, startingStones),
-                buildPlayerSide(playerPitCount, startingStones)
+                buildPlayerSide(playerPitCount, startingStones, GamePlayer.PLAYER_ONE),
+                buildPlayerSide(playerPitCount, startingStones, GamePlayer.PLAYER_TWO)
         };
 
         // Link the player score pits with the first pit of next player
@@ -32,9 +32,9 @@ public class StonePitFactory {
      * @param startingStones Initial quantity of stones in each player pit
      * @return The starting player pit linked to it's following pits for one game board side
      */
-    public StonePit buildPlayerSide(int playerPitCount, int startingStones) {
-        StonePit playerScorePit = new ScorePit();
-        var initialPitBuilder = playerPitBuilder(startingStones);
+    public StonePit buildPlayerSide(int playerPitCount, int startingStones, GamePlayer pitOwner) {
+        StonePit playerScorePit = new ScorePit(pitOwner);
+        var initialPitBuilder = playerPitBuilder(startingStones, pitOwner);
 
         return Stream.generate(() -> initialPitBuilder)
                 .limit(playerPitCount)
@@ -49,7 +49,7 @@ public class StonePitFactory {
      * @param startingStones Initial quantity of stones in the pit
      * @return A function that takes in a pit and builds
      */
-    public Function<StonePit, StonePit> playerPitBuilder(int startingStones) {
-        return (pit) -> new PlayerPit(startingStones, pit);
+    public Function<StonePit, StonePit> playerPitBuilder(int startingStones, GamePlayer pitOwner) {
+        return (pit) -> new PlayerPit(startingStones, pit, pitOwner);
     }
 }
