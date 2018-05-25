@@ -2,8 +2,9 @@
 import angular from 'angular';
 import angularAnimate from 'angular-animate';
 import angularAria from 'angular-aria';
-import angularMaterial from 'angular-material';
 import angularSanitize from 'angular-sanitize';
+import angularMessages from 'angular-messages';
+import angularMaterial from 'angular-material';
 
 import config from './dependencies.config';
 
@@ -12,7 +13,11 @@ import config from './dependencies.config';
  */
 export const DependenciesModule = angular
   .module('app.dependencies', [
-    angularAnimate, angularAria, angularMaterial, angularSanitize,
+    angularAnimate, 
+    angularAria, 
+    angularSanitize,
+    angularMessages,
+    angularMaterial, 
   ])
   .config(config)
   .run()

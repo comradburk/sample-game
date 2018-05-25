@@ -8,15 +8,14 @@ a {
   color: #03A9F4;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 main {
   font-family: Arial, Helvetica, sans-serif;
   display: block;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.main-toolbar {
-  border-radius: 0 0 5px 5px;
 }
 
 .game-list-module {
@@ -26,4 +25,45 @@ main {
 footer {
   text-align: center;
   font-size: 0.8em;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.score-pit {
+  background-color: lightgray;
+  text-align: center;
+  height: 200px;
+  padding: 10px;
+}
+
+.player-pit {
+  background-color: lightgray;
+  text-align: center;
+  cursor: pointer;
+}
+
+.player-pits {
+  align-items: stretch;
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }

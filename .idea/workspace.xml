@@ -2,34 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6045ae83-41e7-4974-b128-6ed5e1c3db3f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/models/GameBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/models/PlayerPit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/models/ScorePit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/models/StonePit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/models/StonePitFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/game/util/GameUtilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/game/models/GameBoardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/game/models/PlayerPitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/game/models/ScorePitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/game/models/StonePitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/GameModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/GameModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/GameRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/GameRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/dto/GameResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/dto/GameResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/repositories/IGameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/repositories/IGameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/repositories/InMemoryGameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/repositories/InMemoryGameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/services/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/services/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/services/IGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/services/IGameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/game/translators/GameResponseTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/game/translators/GameResponseTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/game/models/GameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/game/repositories/InMemoryGameRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/game/repositories/InMemoryGameRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/game/services/GameServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/game/services/GameServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/dependencies/dependencies.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/dependencies/dependencies.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.module.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.module.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/dependencies/dependencies.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/dependencies/dependencies.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/app/game/game-list/game-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/style/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/style/app.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/game/util/GameUtilities.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/StonePit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -81,8 +58,8 @@
       <file leaf-file-name="PlayerPitTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/app/game/models/PlayerPitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,25 +71,34 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/PlayerPit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScorePit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScorePit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/ScorePit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="221">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScorePitTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/app/game/models/ScorePitTest.java">
+      <file leaf-file-name="GamePlayer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/GamePlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="85">
+              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameResponse.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/game/dto/GameResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,15 +106,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/GameBoard.java">
+      <file leaf-file-name="ScorePitTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/app/game/models/ScorePitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#604#605#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,15 +128,6 @@
                 <element signature="e#263#264#0" expanded="true" />
                 <element signature="e#352#353#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoveRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/game/dto/MoveRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -302,7 +277,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
@@ -311,66 +286,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="translators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andrewburkapplication" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -379,9 +294,6 @@
               <item name="andrewburkapplication" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -621,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526965510783</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored game implementation to be more object oriented using objects&#10;for pieces of game instead of just int arrays.&#10;Updated and added new tests.">
+      <created>1527218623872</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527218623872</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -695,8 +614,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit; Basic API set up for creating/getting game. Game model and service set up with necessary actions. Added InMemoryRepository for storing games. Tests added for model and repository. Service tests still need to be created." />
     <MESSAGE value="Added further unit tests. Cleaned up controllers to return dto objects instead of backend objects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added further unit tests. Cleaned up controllers to return dto objects instead of backend objects." />
+    <MESSAGE value="Refactored game implementation to be more object oriented using objects&#10;for pieces of game instead of just int arrays.&#10;Updated and added new tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored game implementation to be more object oriented using objects&#10;for pieces of game instead of just int arrays.&#10;Updated and added new tests." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -962,16 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/dto/GameResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/game/translators/GameResponseTranslator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1003,24 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="16" selection-end-column="110" />
-          <folding>
-            <element signature="e#1069#1070#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/GamePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1063,7 +957,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/StonePit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1080,7 +974,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/game/util/GameUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1111,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/app/game/models/ScorePitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1122,24 +1016,48 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/PlayerPit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/app/game/models/PlayerPitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/ScorePit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="221">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/models/GamePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/game/dto/GameResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

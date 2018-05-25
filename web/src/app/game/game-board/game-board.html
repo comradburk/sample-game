@@ -1,0 +1,28 @@
+<div layout="row" layout-margin>
+  <div flex="15">
+    <div class="score-pit" md-whiteframe="3">
+      <h4 class="md-display-1">Player Two<h3>
+      <h3 class="md-display-3">0<h3>
+    </div>
+  </div>
+  <div flex="70" class="player-pits">
+    <div flex layout="column" layout-margin layout-align="space-between">
+      <div layout="row" layout-margin>
+        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pit in $ctrl.game.playerOnePlayerPits">
+          <p>{{pit.value}}</p>
+        </md-button>
+      </div>
+      <div layout="row" layout-margin>
+        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pit in $ctrl.game.playerTwoPlayerPits">
+          <p>{{pit.value}}</p>
+        </md-button>
+      </div>
+    </div>
+  </div>
+  <div flex="15">
+    <div class="score-pit" md-whiteframe="3">
+      <h4 class="md-display-1">Player One<h3>
+      <h3 class="md-display-3">0</h3>
+    </div>
+  </div>
+</div>

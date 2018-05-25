@@ -1,17 +1,25 @@
-<main>
+<div>
   <md-toolbar md-whiteframe="1" class="md-primary md-hue-2 main-toolbar">
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-        <md-icon class="fa fa-2x fa-bars"></md-icon>
-      </md-button>
-
-      <h2 flex md-truncate>bol.com Application Game - Andrew Burk</h2>
-
-      <md-button class="md-icon-button" aria-label="More">
-        <md-icon class="fa fa-2x fa-ellipsis-v"></md-icon>
-      </md-button>
+      <h2 flex md-truncate>bol.com (Application Project - Andrew Burk)</h2>
     </div>
   </md-toolbar>
+  <main class="container">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Current Game">
+          <game-board></game-board>
 
-  <game-list></game-list>
-</main>
+      </md-tab>
+      <md-tab label="Saved Games">
+          <game-list></game-list>
+        <md-content class="md-padding">
+            
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </main>
+
+  <md-button class="md-fab md-fab-bottom-right md-ink-ripple" aria-label="New Game">
+      <md-icon class="fa fa-2x fa-plus"></md-icon>
+    </md-button>
+</div>
