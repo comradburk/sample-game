@@ -10,7 +10,7 @@ import config from './dependencies.config';
 /**
  * @ngInject
  */
-export default angular
+export const DependenciesModule = angular
   .module('app.dependencies', [
     angularAnimate, angularAria, angularMaterial, angularSanitize,
   ])

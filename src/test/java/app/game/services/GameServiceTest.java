@@ -1,9 +1,10 @@
 package app.game.services;
 
-import app.game.models.Game;
+import app.game.models.GameBoard;
 import app.game.models.GamePlayer;
 import app.game.models.GameState;
 import app.game.repositories.IGameRepository;
+import app.game.util.GameUtilities;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,22 +33,32 @@ class GameServiceTest {
     void shouldCreateDefaultGame() {
         var totalPits = 14;
         var startingStones = 6;
-        when(gameRepository.saveGame(any(Game.class))).thenAnswer(invocation ->  invocation.getArgument(0));
+        when(gameRepository.saveGame(any(GameBoard.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
 
         var createdGame = gameService.createGame();
 
         assertEquals(GamePlayer.PLAYER_ONE, createdGame.getCurrentPlayer());
-        assertEquals(totalPits, createdGame.getPits().size());
-        assertEquals(startingStones, (int)createdGame.getPits().get(0));
-        assertEquals(0, (int)createdGame.getPits().get(totalPits/2 - 1));
+
+        // count created pits
+        var pitCount = 1;
+        var currentPit = createdGame.getPlayerPits().get(GamePlayer.PLAYER_ONE);
+        var nextPit = currentPit.getNextPit();
+        while (nextPit != currentPit) {
+            pitCount++;
+            nextPit = nextPit.getNextPit();
+        }
+        assertEquals(totalPits, pitCount);
+
+        assertEquals(startingStones, createdGame.getPlayerPits().get(GamePlayer.PLAYER_ONE).getStoneCount());
+        assertEquals(0, GameUtilities.GetPlayerScorePit(createdGame.getPlayerPits().get(GamePlayer.PLAYER_ONE)).getStoneCount());
     }
 
     @Test
     void shouldPreventIncorrectPlayerMove() {
         var gameId = UUID.randomUUID();
-        var game = new Game(7, 6);
-        game.setCurrentPlayer(GamePlayer.PLAYER_ONE);
+        var game = new GameBoard(6, 6);
+        assertEquals(GamePlayer.PLAYER_ONE, game.getCurrentPlayer());
         when(gameRepository.getGameById(gameId)).thenReturn(Optional.of(game));
 
         assertThrows(OperationNotSupportedException.class,
@@ -57,13 +68,14 @@ class GameServiceTest {
     @Test
     void shouldPreventMovesInFinishedGame() {
         var gameId = UUID.randomUUID();
-        var game = new Game(7, 6);
-        game.setCurrentPlayer(GamePlayer.PLAYER_ONE);
+        var game = new GameBoard(6, 6);
         when(gameRepository.getGameById(gameId)).thenReturn(Optional.of(game));
 
         // Clear player pits to finish game
-        for (var i = 0; i < 7; i++) {
-            game.getPits().set(i, 0);
+        var currentPit = game.getPlayerPits().get(GamePlayer.PLAYER_ONE);
+        for (var i = 0; i < 6; i++) {
+            currentPit.setStoneCount(0);
+            currentPit = currentPit.getNextPit();
         }
         assertSame(GameState.GAME_OVER, game.getGameState());
 
@@ -75,9 +87,8 @@ class GameServiceTest {
     @Test
     void shouldPreventMovesFromEmptyPit() {
         var gameId = UUID.randomUUID();
-        var game = new Game(7, 6);
-        game.setCurrentPlayer(GamePlayer.PLAYER_ONE);
-        game.getPits().set(0, 0);
+        var game = new GameBoard(6, 6);
+        game.getPlayerPits().get(GamePlayer.PLAYER_ONE).setStoneCount(0);
         when(gameRepository.getGameById(gameId)).thenReturn(Optional.of(game));
 
 

@@ -54,7 +54,7 @@ public class GameController {
     void cancelGame(Context context) {
         var gameId = UUID.fromString(context.param(ROUTE_PARAM_GAME_ID));
 
-        if(!gameService.getGameById(gameId).isPresent()) {
+        if (!gameService.getGameById(gameId).isPresent()) {
             context.status(404);
             context.json("Game not found");
             return;

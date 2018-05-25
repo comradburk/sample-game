@@ -11,6 +11,7 @@ import static io.javalin.ApiBuilder.*;
 @Singleton
 public class GameRouting extends Routing<GameController> {
     private Javalin javalin;
+
     @Inject
     public GameRouting(Javalin javalin) {
         this.javalin = javalin;

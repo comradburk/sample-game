@@ -1,20 +1,20 @@
 package app.game.repositories;
 
-import app.game.models.Game;
+import app.game.models.GameBoard;
 
 import javax.inject.Singleton;
 import java.util.*;
 
 @Singleton
 public class InMemoryGameRepository implements IGameRepository {
-    private Map<UUID, Game> games;
+    private Map<UUID, GameBoard> games;
 
-    InMemoryGameRepository(){
+    InMemoryGameRepository() {
         games = new HashMap<>();
     }
 
     @Override
-    public Optional<Game> getGameById(UUID id) {
+    public Optional<GameBoard> getGameById(UUID id) {
         if (!games.containsKey(id)) {
             return Optional.empty();
         }
@@ -23,12 +23,12 @@ public class InMemoryGameRepository implements IGameRepository {
     }
 
     @Override
-    public Collection<Game> getGames() {
+    public Collection<GameBoard> getGames() {
         return games.values();
     }
 
     @Override
-    public Game saveGame(Game game) {
+    public GameBoard saveGame(GameBoard game) {
         games.put(game.getId(), game);
 
         return game;

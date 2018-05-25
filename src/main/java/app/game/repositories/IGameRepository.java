@@ -1,17 +1,17 @@
 package app.game.repositories;
 
-import app.game.models.Game;
+import app.game.models.GameBoard;
 
 import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
 public interface IGameRepository {
-    Optional<Game> getGameById(UUID id);
+    Optional<GameBoard> getGameById(UUID id);
 
-    Collection<Game> getGames();
+    Collection<GameBoard> getGames();
 
-    Game saveGame(Game game);
+    GameBoard saveGame(GameBoard game);
 
     void deleteGame(UUID id);
 }

@@ -2,8 +2,8 @@ package app.game;
 
 import app.game.repositories.IGameRepository;
 import app.game.repositories.InMemoryGameRepository;
-import app.game.services.IGameService;
 import app.game.services.GameService;
+import app.game.services.IGameService;
 import app.util.Routing;
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;

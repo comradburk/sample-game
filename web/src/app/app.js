@@ -1,6 +1,6 @@
 import angular from 'angular';
-import dependenciesModule from './dependencies/dependencies.module';
-import GameListModule from './game/game-list/game-list.module';
+import { DependenciesModule } from './dependencies/dependencies.module';
+import { GameModule } from './game/game.module';
 
 import '../style/app.css';
 import '../../node_modules/font-awesome/css/font-awesome.css';
@@ -23,7 +23,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [dependenciesModule, GameListModule])
+angular.module(MODULE_NAME, [DependenciesModule, GameModule])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
 

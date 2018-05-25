@@ -1,6 +1,6 @@
 package app.game.repositories;
 
-import app.game.models.Game;
+import app.game.models.GameBoard;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +20,7 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldSaveGame() {
-        var game = new Game(7, 6);
+        var game = new GameBoard(6, 6);
         var savedGame = repository.saveGame(game);
 
         assertEquals(game, savedGame);
@@ -28,7 +28,7 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldGetGameById() {
-        var game = new Game(7, 6);
+        var game = new GameBoard(6, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
         repository.saveGame(game);
@@ -42,7 +42,7 @@ class InMemoryGameRepositoryTest {
     @Test
     void shouldGetAllGames() {
         Stream.generate(() -> {
-            var newGame = new Game(7, 6);
+            var newGame = new GameBoard(6, 6);
             newGame.setId(UUID.randomUUID());
             return newGame;
         })
@@ -58,7 +58,7 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldGetEmptyGameIfNotExists(){
-        var game = new Game(7, 6);
+        var game = new GameBoard(6, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
         repository.saveGame(game);
@@ -70,7 +70,7 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldDeleteGame() {
-        var game = new Game(7, 6);
+        var game = new GameBoard(6, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
         repository.saveGame(game);
@@ -83,7 +83,7 @@ class InMemoryGameRepositoryTest {
 
     @Test
     void shouldThrowWhenDeletingNonExisting() {
-        var game = new Game(7, 6);
+        var game = new GameBoard(6, 6);
         var gameId = UUID.randomUUID();
         game.setId(gameId);
         repository.saveGame(game);
