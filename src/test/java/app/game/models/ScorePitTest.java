@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ScorePitTest {
     @Test
-    void ShouldAddCapturedStonesToTotal() {
+    void shouldAddCapturedStonesToTotal() {
         var scorePit = new ScorePit(GamePlayer.PLAYER_ONE);
 
 
-        scorePit.AddCapturedStones(10);
+        scorePit.addCapturedStones(10);
 
 
         assertEquals(10, scorePit.getStoneCount());
@@ -44,7 +44,7 @@ class ScorePitTest {
 	}
 
     @Test
-    void ShouldNotAllowCapturingStones() {
+    void shouldNotAllowCapturingStones() {
         var scorePit = new ScorePit(GamePlayer.PLAYER_ONE);
 
 
@@ -52,10 +52,10 @@ class ScorePitTest {
     }
 
     @Test
-    void ShouldNotAllowPlayingPit() {
+    void shouldNotAllowPlayingPit() {
         var scorePit = new ScorePit(GamePlayer.PLAYER_ONE);
 
 
-        assertThrows(OperationNotSupportedException.class, () -> scorePit.playPit());
+        assertThrows(OperationNotSupportedException.class, () -> scorePit.playPit(GamePlayer.PLAYER_ONE));
     }
 }

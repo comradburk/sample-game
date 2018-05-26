@@ -9,14 +9,14 @@ public class PlayerPit extends StonePit {
 
     public StonePit playPit(GamePlayer player) throws OperationNotSupportedException {
         if (stones == 0) {
-            throw new OperationNotSupportedException("Cannot play an empty pit");
+            throw new OperationNotSupportedException("Cannot play an empty pit!");
         }
 		if (pitOwner != player) {
-			throw new OperationNotSupportedException("Cannot play another players pit");
+			throw new OperationNotSupportedException("Cannot play another players pit!");
 		}
 
-        var stonesToMove = stones;
-        stones = 0;
+        var stonesToMove = this.stones;
+        this.stones = 0;
 
         return nextPit.distributeStones(stonesToMove, player);
     }

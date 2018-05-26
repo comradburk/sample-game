@@ -14,8 +14,8 @@ public class GameBoard {
 
     public GameBoard(int playerPitCount, int startingStones) {
         if (playerPitCount <= 0)
-            throw new IllegalArgumentException("Number of pits must be greater than 0 (you want to actually play right?)");
-        if (startingStones <= 0) throw new IllegalArgumentException("Starting stones must be greater than 0");
+            throw new IllegalArgumentException("Number of pits must be greater than 0...you want to actually play right?");
+        if (startingStones <= 0) throw new IllegalArgumentException("Starting stones must be greater than 0.");
 
         _playerPitCount = playerPitCount;
         _currentPlayer = GamePlayer.PLAYER_ONE;
@@ -59,8 +59,8 @@ public class GameBoard {
 		}
 		
 		if (getGameState() == GameState.GAME_OVER) {
-			for (var player in _playerPits.getKeys()) {
-				clearPlayerSide(player);
+			for (var gamePlayer : _playerPits.keySet()) {
+				clearPlayerSide(gamePlayer);
 			}
 		}
     }
@@ -69,7 +69,7 @@ public class GameBoard {
         var playerScorePit = GameUtilities.GetPlayerScorePit(lastScoredPit);
         var oppositePit = getOppositePit(player, lastScoredPit);
 
-        playerScorePit.AddCapturedStones(lastScoredPit.captureStones() + oppositePit.captureStones());
+        playerScorePit.addCapturedStones(lastScoredPit.captureStones() + oppositePit.captureStones());
     }
 
     StonePit getOppositePit(GamePlayer player, StonePit givenPit) {
@@ -99,10 +99,8 @@ public class GameBoard {
     }
 	
 	public void clearPlayerSide(GamePlayer player) {
-		var pitsToClear = _playerPitCount;
-		
 		var currentClearedStones = 0;
-		var currentPit = playerPits.get(player);
+		var currentPit = _playerPits.get(player);
 		
 		for (var i = 0; i < _playerPitCount; i++) {
 			currentClearedStones += currentPit.getStoneCount();

@@ -5,15 +5,16 @@ import javax.naming.OperationNotSupportedException;
 public abstract class StonePit {
     int stones;
     StonePit nextPit;
-	GamePlayer _pitOwner;
+	GamePlayer pitOwner;
 
     protected StonePit(int startingStones, StonePit nextPit, GamePlayer pitOwner) {
         stones = startingStones;
         this.nextPit = nextPit;
+        this.pitOwner = pitOwner;
     }
 	
 	public GamePlayer getPitOwner() { 
-		return _pitOwner;
+		return pitOwner;
 	}
 
     public int getStoneCount() {
@@ -29,10 +30,10 @@ public abstract class StonePit {
     public abstract StonePit playPit(GamePlayer player) throws OperationNotSupportedException;
 
     public StonePit distributeStones(int stones, GamePlayer player) {
-        this.stones = this.stones + 1;
+        this.stones++;
+        stones--;
 
-        var stonesLeft = stones - 1;
-        return stonesLeft == 0 ? this : nextPit.distributeStones(stones - 1);
+        return stones == 0 ? this : nextPit.distributeStones(stones, player);
     }
 
     public StonePit getNextPit() {

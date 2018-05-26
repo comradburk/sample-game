@@ -1,37 +1,37 @@
-<div ng-if="$ctrl.game === null">
+<div style="text-align: center;">
   <md-button class="md-raised md-primary md-ink-ripple" ng-click="$ctrl.newGame()">New Game</md-button>
 </div>
 
-<div layout="row" layout-sm="column" layout-align="space-around" ng-if="$ctrl.loading">
-  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-</div>
 <div layout="row" layout-margin ng-if="$ctrl.game !== null">
-  <div flex="15">
-    <div class="score-pit" md-whiteframe="3">
-      <h4 class="md-display-1">Player Two<h3>
-      <h3 class="md-display-3">{{$ctrl.game.playerScore[$ctrl.gamePlayers.playerTwo}}<h3>
-    </div>
-  </div>
-  <div flex="70" class="player-pits">
-    <div flex layout="column" layout-margin layout-align="space-between">
-      <div layout="row" layout-margin>
-        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pit in $ctrl.game.playerPits[$ctrl.gamePlayers.playerOne]"
-          ng-click="$ctrl.playPit($ctrl.gamePlayers.playerOne, $index)" ng-disabled="$ctrl.pitsDisabled($ctrl.gamePlayers.playerOne)">
-          <p>{{pit.value}}</p>
-        </md-button>
-      </div>
-      <div class="player-two-pits" layout-margin>
-        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pit in $ctrl.game.playerPits[$ctrl.gamePlayers.playerTwo]"
-        ng-click="$ctrl.playPit($ctrl.gamePlayers.playerTwo, $index)" ng-disabled="$ctrl.pitsDisabled($ctrl.gamePlayers.playerTwo)">
-          <p>{{pit.value}}</p>
-        </md-button>
-      </div>
-    </div>
-  </div>
   <div flex="15">
     <div class="score-pit" md-whiteframe="3">
       <h4 class="md-display-1">Player One<h3>
       <h3 class="md-display-3">{{$ctrl.game.playerScore[$ctrl.gamePlayers.playerOne]}}</h3>
+    </div>
+  </div>
+  <div flex="70" class="player-pits">
+    <div flex layout="column" layout-margin layout-align="space-between">
+      <div class="reversed-pits" layout-margin ng-class="{ 'active-player': $ctrl.isActivePlayer($ctrl.gamePlayers.playerOne) }">
+        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pitScore in $ctrl.game.playerPits[$ctrl.gamePlayers.playerOne] track by $index"
+          ng-click="$ctrl.playPit($ctrl.gamePlayers.playerOne, $index)" ng-disabled="$ctrl.pitsDisabled($ctrl.gamePlayers.playerOne)">
+          <span>{{pitScore}}</span>
+        </md-button>
+      </div>
+      <div layout="row" ng-if="$ctrl.isGameOver()" class="game-status">
+        <h3 class="md-title">Game Over - {{$ctrl.victoryText()}}</h3>
+      </div>
+      <div layout="row" layout-margin ng-class="{ 'active-player': $ctrl.isActivePlayer($ctrl.gamePlayers.playerTwo) }">
+        <md-button flex class="player-pit md-raised md-ink-ripple" md-whiteframe="3" ng-repeat="pitScore in $ctrl.game.playerPits[$ctrl.gamePlayers.playerTwo] track by $index"
+        ng-click="$ctrl.playPit($ctrl.gamePlayers.playerTwo, $index)" ng-disabled="$ctrl.pitsDisabled($ctrl.gamePlayers.playerTwo)">
+          <span>{{pitScore}}</span>
+        </md-button>
+      </div>
+    </div>
+  </div>
+  <div flex="15">
+    <div class="score-pit" md-whiteframe="3">
+      <h4 class="md-display-1">Player Two<h3>
+      <h3 class="md-display-3">{{$ctrl.game.playerScore[$ctrl.gamePlayers.playerTwo]}}<h3>
     </div>
   </div>
 </div>

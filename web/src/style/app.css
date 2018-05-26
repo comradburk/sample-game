@@ -18,15 +18,6 @@ main {
   display: block;
 }
 
-.game-list-module {
-  margin-top: 50px;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
-}
-
 .container {
   padding-right: 15px;
   padding-left: 15px;

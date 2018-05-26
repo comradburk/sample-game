@@ -98,6 +98,19 @@ class GameServiceTest {
 
     @Test
     void shouldPerformValidMove() {
+        var gameId = UUID.randomUUID();
+        var game = new GameBoard(6, 6);
+        when(gameRepository.getGameById(gameId)).thenReturn(Optional.of(game));
+        when(gameRepository.saveGame(any(GameBoard.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
+        GameBoard updatedGame = null;
+        try {
+            updatedGame = gameService.performMove(gameId, GamePlayer.PLAYER_ONE, 0);
+        } catch (OperationNotSupportedException e) {
+            fail();
+        }
+
+        assertEquals(1, updatedGame.getScore(GamePlayer.PLAYER_ONE));
+        assertEquals(0, updatedGame.getScore(GamePlayer.PLAYER_TWO));
     }
 }

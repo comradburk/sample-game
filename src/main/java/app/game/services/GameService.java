@@ -52,11 +52,11 @@ public class GameService implements IGameService {
         var game = gameRepository.getGameById(gameId).get();
 
         if (game.getGameState() != GameState.ACTIVE) {
-            throw new OperationNotSupportedException("Game is over");
+            throw new OperationNotSupportedException("Game is over!");
         }
 
         if (game.getCurrentPlayer() != player) {
-            throw new OperationNotSupportedException("It is not the players turn");
+            throw new OperationNotSupportedException("It is not the players turn!");
         }
 
         game.playPit(player, playerPitIndex);

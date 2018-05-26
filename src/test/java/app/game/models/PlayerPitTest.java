@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerPitTest {
     @Test
-    void ShouldPlayPitByMovingStones() {
-        var playerSidePit = new StonePitFactory().buildPlayerSide(6, 2);
+    void shouldPlayPitByMovingStones() {
+        var playerSidePit = new StonePitFactory().buildPlayerSide(6, 2, GamePlayer.PLAYER_ONE);
 
 
         StonePit lastPitMoved = null;
         try {
-            lastPitMoved = playerSidePit.playPit();
+            lastPitMoved = playerSidePit.playPit(GamePlayer.PLAYER_ONE);
         } catch (OperationNotSupportedException e) {
             fail();
         }
@@ -41,7 +41,7 @@ class PlayerPitTest {
         var playerSidePit = new PlayerPit(0, new PlayerPit(0, null, GamePlayer.PLAYER_ONE), GamePlayer.PLAYER_ONE);
 
 
-        playerSidePit.distributeStones(2);
+        playerSidePit.distributeStones(2, GamePlayer.PLAYER_ONE);
 
 
         assertEquals(1, playerSidePit.getStoneCount());

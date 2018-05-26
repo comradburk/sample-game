@@ -7,16 +7,16 @@ public class ScorePit extends StonePit {
 		super(0, null, pitOwner);
     }
 
-    public void SetNextPit(StonePit firstPitNextPlayer) {
+    public void setNextPit(StonePit firstPitNextPlayer) {
         nextPit = firstPitNextPlayer;
     }
 
-    public void AddCapturedStones(int stones) {
-        this.stones = this.stones + stones;
+    public void addCapturedStones(int stones) {
+        this.stones += stones;
     }
 	
 	public StonePit distributeStones(int stones, GamePlayer player) {
-        if (player == _pitOwner) {
+        if (player == pitOwner) {
 			return super.distributeStones(stones, player);
 		}
 		
@@ -27,7 +27,7 @@ public class ScorePit extends StonePit {
         throw new OperationNotSupportedException("Cannot capture stones from score pit!");
     }
 
-    public StonePit playPit() throws OperationNotSupportedException {
+    public StonePit playPit(GamePlayer player) throws OperationNotSupportedException {
         throw new OperationNotSupportedException("Cannot make a move from score pit!");
     }
 }

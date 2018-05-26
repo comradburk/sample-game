@@ -95,6 +95,27 @@ class GameBoardTest {
 
     @Test
     void shouldPlayFromPit() {
+        var game = new GameBoard(6, 6);
 
+
+        try {
+            game.playPit(GamePlayer.PLAYER_ONE, 0);
+        } catch (OperationNotSupportedException e) {
+            fail();
+        }
+
+
+        var currentPit = game.getPlayerPits().get(GamePlayer.PLAYER_ONE);
+        // all stones removed from played pit
+        assertEquals(0, currentPit.getStoneCount());
+        for (var i = 0; i < 5; i++) {
+            currentPit = currentPit.getNextPit();
+            // one stone added to player pits
+            assertEquals(7, currentPit.getStoneCount());
+        }
+
+        currentPit = currentPit.getNextPit();
+        // one stone added to player score pit
+        assertEquals(1, currentPit.getStoneCount());
     }
 }

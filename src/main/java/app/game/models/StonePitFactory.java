@@ -15,8 +15,8 @@ public class StonePitFactory {
         };
 
         // Link the player score pits with the first pit of next player
-        GameUtilities.GetPlayerScorePit(playerPits[0]).SetNextPit(playerPits[1]);
-        GameUtilities.GetPlayerScorePit(playerPits[1]).SetNextPit(playerPits[0]);
+        GameUtilities.GetPlayerScorePit(playerPits[0]).setNextPit(playerPits[1]);
+        GameUtilities.GetPlayerScorePit(playerPits[1]).setNextPit(playerPits[0]);
 
         var completedPits = new HashMap<GamePlayer, StonePit>();
         completedPits.put(GamePlayer.PLAYER_ONE, playerPits[0]);

@@ -30,5 +30,3 @@ angular.module(MODULE_NAME, [
   ])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
-
-//angular.bootstrap(document.documentElement, ['app']);

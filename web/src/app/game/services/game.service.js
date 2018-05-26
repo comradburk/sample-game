@@ -1,26 +1,28 @@
 export class GameService {
-  constructor($http, apiConfig) {
+  constructor($http, apiConfig, GamePlayers) {
     'ngInject';
     this.$http = $http;
     this.apiConfig = apiConfig;
+    this.gamePlayers = GamePlayers;
   }
 
   newGame() {
     return this.$http
       .post(this.apiConfig.baseUrl + 'game')
-      .then(response => response.data);
+      .then(response => response.data)
+      .then(gameId => this.getGame(gameId));
   }
 
   getGames() {
     return this.$http
       .get(this.apiConfig.baseUrl + 'game')
-      .then(response => response.data.map(game => translateGameResponse(game)));
+      .then(response => response.data.map(game => this.translateGameResponse(game)));
   }
 
   getGame(gameId) {
     return this.$http
       .get(this.apiConfig.baseUrl + 'game/' + gameId)
-      .then(response => translateGameResponse(response.data));
+      .then(response => this.translateGameResponse(response.data));
   }
 
   performMove(gameId, gamePlayer, playerPitIndex) {
@@ -28,29 +30,37 @@ export class GameService {
     return this.$http.post(url, {
         gamePlayer: gamePlayer,
         playerPitIndex: playerPitIndex,
-    }).then(response => translateGameResponse(response.data));
+    }).then(response => this.translateGameResponse(response.data));
   }
 
   translateGameResponse(game){
-    const playerOneField = 'playerOne';
-    const playerTwoField = 'playerTwo';
-    let playerOnePits = game.pits[playerOneField];
-    let playerTwoPits = game.pits[playerTwoField];
+    let playerOnePits = game.pits[this.gamePlayers.playerOne];
+    let playerTwoPits = game.pits[this.gamePlayers.playerTwo];
 
     var gameBoard = {
       id: game.id,
       gameState: game.gameState,
       currentPlayer: game.currentPlayer,
       playerScore: {
-        [playerOneField]: playerOnePits[playerOnePits.Length - 1],
-        [playerTwoField]: playerTwoPits[playerTwoPits.Length - 1],
+        [this.gamePlayers.playerOne]: playerOnePits[playerOnePits.length - 1],
+        [this.gamePlayers.playerTwo]: playerTwoPits[playerTwoPits.length - 1],
        },
       playerPits: {
-        [playerOneField]: playerOnePits.slice(0, playerOnePits.Length - 2),
-        [playerTwoField]: playerTwoPits.slice(0, playerOnePits.Length - 2),
+        [this.gamePlayers.playerOne]: playerOnePits.slice(0, playerOnePits.length - 1),
+        [this.gamePlayers.playerTwo]: playerTwoPits.slice(0, playerOnePits.length - 1),
       },
     };
 
     return gameBoard;
+  }
+
+  isGameOver(game){
+    return (game.gameState === 'gameOver');
+  }
+
+  isActivePlayer(game, gamePlayer) {
+    if (!this.isGameOver(game) && gamePlayer === game.currentPlayer) {
+      return true;
+    }
   }
 }

@@ -16,7 +16,16 @@
   display: flex;
 }
 
-.player-two-pits {
+.active-player {
+  background-color: darkgray;
+}
+
+.reversed-pits {
   display: flex;
   flex-direction: row-reverse;
+}
+
+.game-status {
+  color: darkred;
+  justify-content: center;
 }
