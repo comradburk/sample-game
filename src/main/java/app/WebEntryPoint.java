@@ -34,6 +34,7 @@ class WebEntryPoint implements AppEntryPoint {
             context.status(400);
             context.json(ex.getMessage());
         });
+		app.enableStaticFiles("dist");
         app.start();
     }
 

@@ -8,6 +8,11 @@ import angularMaterial from 'angular-material';
 
 import config from './dependencies.config';
 
+// Material design css
+import 'angular-material/angular-material.css';
+// Icons
+import 'font-awesome/css/font-awesome.css';
+
 /**
  * @ngInject
  */

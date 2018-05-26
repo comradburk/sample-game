@@ -4,8 +4,6 @@ import { ConfigModule } from './config/config.module';
 import { GameModule } from './game/game.module';
 
 import '../style/app.css';
-import '../../node_modules/font-awesome/css/font-awesome.css';
-import '../../node_modules/angular-material/angular-material.css';
 
 
 let app = () => {
@@ -30,3 +28,5 @@ angular.module(MODULE_NAME, [
   ])
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
+  
+export default MODULE_NAME;
